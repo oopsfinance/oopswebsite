@@ -1,0 +1,109 @@
+@import url(reset.css);
+
+/* ------------------------------  fonts ------------------------------ */
+@font-face{
+    src: url(../fonts/SF-Pro-Rounded-Light.otf);
+    font-family: "SFProRounded";
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face{
+    src: url(../fonts/SF-Pro-Rounded-Semibold.otf);
+    font-family: "SFProRounded";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ------------------------------ default properties ------------------------------ */
+
+
+.page{
+    margin: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "SFProRounded";
+    font-size: 70px;
+    font-weight: lighter;
+}
+.page > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ------------------------------  content properties ------------------------------ */
+.content{ 
+    flex: 1;
+}
+
+.money{
+    margin-top: 32vh;
+    font-family: "SFProRounded";
+    font-size: 110px;
+    font-weight: bold;
+}
+
+.text{
+    margin-top: 25px;
+    padding: 0% 6%;
+    text-align: center;
+}
+
+
+/* ------------------------------  footer properties ------------------------------ */
+.footer{
+    flex: 0;
+}
+
+.footer *{
+    padding: 3px 0px;
+}
+
+.date{
+    font-size: 40px;
+}
+
+.company{
+    padding-bottom: 14px;
+    font-size: 20px;
+    color: rgba(170, 165, 165, 1);
+}
+
+/* ------------------------------ optimisation for mobile ------------------------------ */
+
+@media screen 
+and (max-device-width: 812px){
+
+    /*added in order to disable scrolling on iPhones*/
+    html, body {
+        overflow-y: hidden;
+        position: fixed;
+    }
+
+    .money{
+        margin-top: 18vh;
+        font-size: 80px;
+    }
+
+    .text{
+        font-size: 40px;
+        margin-top: 16px;
+        padding: 0% 17%;
+    }
+
+    .footer *{
+        padding: 5px 0px;
+    }
+
+    .date{
+        font-size: 30px;
+    }
+
+    .company{
+        padding: 0px;
+        padding-bottom: 16vh;
+        font-size: 20px;
+        color: rgba(170, 165, 165, 1);
+    }
+}
