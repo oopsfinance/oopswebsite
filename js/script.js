@@ -35,7 +35,7 @@ window.addEventListener("load",function(){
 	}
 
 	const money = document.querySelector(".money");
-	let url = 'https://dev.oops.finance/api/v1/public/oops_total';
+	let url = 'https://api.oops.finance/api/v1/public/oops_total';
 	let value = parseInt(parseData(url)); //parse initial value
 	money.innerHTML = value.toLocaleString("en-US", { 
 		style: "currency", 
