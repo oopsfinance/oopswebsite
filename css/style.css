@@ -77,7 +77,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 86px 0;
+  padding: 56px 24px 120px;
 }
 
 .main__total {
@@ -113,6 +113,47 @@
 
 .main__description span {
   color: #6ce246;
+}
+
+.whitelist__success {
+  margin-top: 60px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 31.2633px;
+  line-height: 53px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.393025px;
+  color: #4a4a4a;
+}
+
+.whitelist__success p {
+  margin: 0;
+  margin-right: 18px;
+}
+
+.whitelist__success p::after {
+  content: "👉";
+}
+
+.whitelist__success a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17.8648px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.393025px;
+  color: #8438ff;
+
+  background: rgba(132, 56, 255, 0.31);
+  border-radius: 18px;
+  padding: 12px 24px;
+  width: 184px;
 }
 
 .input {
@@ -156,7 +197,7 @@
   border: none;
   cursor: pointer;
 
-  background: #C3FFAD;
+  background: #c3ffad;
   border-radius: 0px 20px 20px 0px;
   font-style: normal;
   font-weight: normal;
@@ -169,8 +210,8 @@
 }
 
 .input__button:disabled {
-    background: #defad4;
-    cursor: default;
+  background: #defad4;
+  cursor: default;
 }
 
 .footer {
@@ -204,37 +245,83 @@
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 
-@media screen and (max-device-width: 812px) {
-  /*added in order to disable scrolling on iPhones*/
-  html,
-  body {
-    overflow-y: hidden;
-    position: fixed;
+@media screen and (max-width: 812px) {
+  .header {
+    padding: 32px 42px 0;
   }
 
-  .money {
-    margin-top: 18vh;
-    font-size: 80px;
-  }
-
-  .text {
+  .header__label {
     font-size: 40px;
-    margin-top: 16px;
-    padding: 0% 17%;
+    line-height: 111.34%;
   }
 
-  .footer * {
-    padding: 5px 0px;
+  .header__join {
+    display: none;
   }
 
-  .date {
+  .header__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .main {
+    padding-bottom: 48px;
+  }
+
+  .main__total {
+    font-size: 64px;
+    line-height: 95px;
+    margin: 0;
+  }
+
+  .main__description {
     font-size: 30px;
+    line-height: 36px;
   }
 
-  .company {
-    padding: 0px;
-    padding-bottom: 16vh;
+  .whitelist__success {
     font-size: 20px;
-    color: rgba(170, 165, 165, 1);
+    line-height: 154.34%;
+    flex-direction: column;
+  }
+
+  .whitelist__success p {
+    margin: 0;
+  }
+
+  .whitelist__success p::after {
+    content: "👇";
+    display: block;
+  }
+
+  .whitelist__success a {
+    margin-top: 18px;
+  }
+
+  .input {
+    height: 48px;
+    margin-top: 24px;
+  }
+
+  .input__flag {
+    width: 25px;
+    height: 25px;
+  }
+
+  .input__field {
+    font-size: 15px;
+    line-height: 18px;
+    width: 100%;
+  }
+
+  .input__button {
+    font-size: 13px;
+    line-height: 16px;
+    min-width: 100px;
   }
 }

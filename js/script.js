@@ -31,8 +31,11 @@ window.addEventListener("load", function () {
     if (newValue != currentValue) increaseValue(newValue - currentValue);
   }
 
-  var phoneInput = document.getElementById("whitelist-phone");
-  var phoneButton = document.getElementById("whitelist-submit");
+  let preloadUrl = "https://api.oops.finance/api/v1/public/preload";
+  var whitelistSuccess = document.querySelector(".whitelist__success");
+  var whitelistInput = document.querySelector("#whitelist-input");
+  var phoneInput = document.querySelector("#whitelist-input input");
+  var phoneButton = document.querySelector("#whitelist-input button");
   var phoneMask = IMask(phoneInput, {
     mask: "+{1} (000) 000-000",
   });
@@ -40,8 +43,24 @@ window.addEventListener("load", function () {
   phoneButton.disabled = !phoneMask.masked.isComplete;
   phoneMask.on("accept", function () {
     phoneButton.disabled = !phoneMask.masked.isComplete;
-    // TODO Back
   });
+
+  phoneButton.onclick = function () {
+    phoneButton.disabled = true;
+    fetch(preloadUrl, {
+      method: "POST",
+      body: JSON.stringify({ phone: phoneMask.unmaskedValue }),
+    }).then((res) => {
+      phoneButton.disabled = false;
+      if (res.ok == false) {
+        alert("Error!");
+        return;
+      }
+
+      whitelistInput.style.display = "none";
+      whitelistSuccess.style.display = "";
+    });
+  };
 
   const money = document.querySelector(".main__total");
   let url = "https://api.oops.finance/api/v1/public/oops_total";
