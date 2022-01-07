@@ -1,7 +1,7 @@
 @import url(reset.css);
 
 * {
-    font-family: ui-rounded, 'Varela Round', sans-serif;
+    font-family: ui-rounded, 'Varela Round', sans-serif !important;
 }
 
 body {
@@ -154,6 +154,7 @@ body {
   display: flex;
   align-items: center;
   height: 62px;
+  width: 430px;
 }
 
 .input__flag {
@@ -184,6 +185,7 @@ body {
   align-items: center;
   text-align: center;
   text-decoration: none;
+  flex-shrink: 0;
   border: none;
   cursor: pointer;
 
@@ -296,6 +298,7 @@ body {
   .input {
     height: 48px;
     margin-top: 24px;
+    width: 100%;
   }
 
   .input__flag {
