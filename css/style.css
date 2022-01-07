@@ -1,109 +1,240 @@
 @import url(reset.css);
 
 /* ------------------------------  fonts ------------------------------ */
-@font-face{
-    src: url(../fonts/SF-Pro-Rounded-Light.otf);
-    font-family: "SFProRounded";
-    font-weight: lighter;
-    font-style: normal;
+@font-face {
+  src: url(../fonts/SF-Pro-Rounded-Medium.ttf);
+  font-family: "SFProRounded";
+  font-weight: normal;
+  font-style: normal;
 }
-@font-face{
-    src: url(../fonts/SF-Pro-Rounded-Semibold.otf);
-    font-family: "SFProRounded";
-    font-weight: bold;
-    font-style: normal;
+@font-face {
+  src: url(../fonts/SF-Pro-Rounded-Semibold.otf);
+  font-family: "SFProRounded";
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* ------------------------------ default properties ------------------------------ */
 
-
-.page{
-    margin: 0;
-    overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: "SFProRounded";
-    font-size: 70px;
-    font-weight: lighter;
-}
-.page > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* ------------------------------  content properties ------------------------------ */
-.content{ 
-    flex: 1;
+.page {
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "SFProRounded";
 }
 
-.money{
-    margin-top: 32vh;
-    font-family: "SFProRounded";
-    font-size: 110px;
-    font-weight: bold;
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 84px 72px 0;
+  box-sizing: border-box;
 }
 
-.text{
-    margin-top: 25px;
-    padding: 0% 6%;
-    text-align: center;
+.header__label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 111.34%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  color: #000000;
+  margin: 0;
+  margin-right: auto;
 }
 
-
-/* ------------------------------  footer properties ------------------------------ */
-.footer{
-    flex: 0;
+.header__icon {
+  width: 70px;
+  height: 70px;
+  margin-left: 32px;
 }
 
-.footer *{
-    padding: 3px 0px;
+.header__join {
+  height: 56px;
+  text-decoration: none;
+  background: rgba(132, 56, 255, 0.31);
+  border-radius: 36px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 111.34%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  color: #7a28ff;
+  padding: 0 32px;
 }
 
-.date{
-    font-size: 40px;
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 86px 0;
 }
 
-.company{
-    padding-bottom: 14px;
-    font-size: 20px;
-    color: rgba(170, 165, 165, 1);
+.main__total {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 124px;
+  line-height: 148px;
+
+  letter-spacing: 0.389425px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 14px;
+}
+
+.main__description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 62px;
+  line-height: 74px;
+  letter-spacing: 0.389425px;
+  color: #0c0b0b;
+  text-align: center;
+  margin: 0;
+}
+
+.main__description strong {
+  font-weight: bold;
+}
+
+.main__description span {
+  color: #6ce246;
+}
+
+.input {
+  margin-top: 60px;
+  background: rgba(226, 226, 226, 0.35);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  height: 62px;
+}
+
+.input__flag {
+  padding-left: 16px;
+  height: 30px;
+  width: 30px;
+}
+
+.input__field {
+  font-family: SFProRounded;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17.7012px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.328089px;
+  color: #000000;
+  margin-left: 8px;
+  height: 100%;
+
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.input__button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  background: #C3FFAD;
+  border-radius: 0px 20px 20px 0px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17.7012px;
+  line-height: 21px;
+  letter-spacing: 0.389425px;
+  color: #6ce246;
+  padding: 0 22px;
+  height: 100%;
+}
+
+.input__button:disabled {
+    background: #defad4;
+    cursor: default;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29.1667px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.366667px;
+
+  margin-bottom: 32px;
+}
+
+.footer__date {
+  color: #000000;
+  margin: 0;
+}
+
+.footer__company {
+  color: #4a4a4a;
+  opacity: 0.37;
+  margin: 0;
 }
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 
-@media screen 
-and (max-device-width: 812px){
+@media screen and (max-device-width: 812px) {
+  /*added in order to disable scrolling on iPhones*/
+  html,
+  body {
+    overflow-y: hidden;
+    position: fixed;
+  }
 
-    /*added in order to disable scrolling on iPhones*/
-    html, body {
-        overflow-y: hidden;
-        position: fixed;
-    }
+  .money {
+    margin-top: 18vh;
+    font-size: 80px;
+  }
 
-    .money{
-        margin-top: 18vh;
-        font-size: 80px;
-    }
+  .text {
+    font-size: 40px;
+    margin-top: 16px;
+    padding: 0% 17%;
+  }
 
-    .text{
-        font-size: 40px;
-        margin-top: 16px;
-        padding: 0% 17%;
-    }
+  .footer * {
+    padding: 5px 0px;
+  }
 
-    .footer *{
-        padding: 5px 0px;
-    }
+  .date {
+    font-size: 30px;
+  }
 
-    .date{
-        font-size: 30px;
-    }
-
-    .company{
-        padding: 0px;
-        padding-bottom: 16vh;
-        font-size: 20px;
-        color: rgba(170, 165, 165, 1);
-    }
+  .company {
+    padding: 0px;
+    padding-bottom: 16vh;
+    font-size: 20px;
+    color: rgba(170, 165, 165, 1);
+  }
 }

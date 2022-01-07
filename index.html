@@ -10,19 +10,35 @@
 </head>
 <body>
 	<div class="page">
-		<div class="content">
-			<p class="money">00</p> 
-			<p class="text">  Total $ oopsed in the US since Jan 1st 2022 </p> 
+		<div class="header">
+			<p class="header__label">Oops</p>
+			<a class="header__join" href="/">Join</a>
+			<img class="header__icon" src="images/icon.png" />
+		</div>
+		
+		<div class="main">
+			<p class="main__total">00</p>
+			<p class="main__description">
+				Total
+				<span>$</span>
+				<strong>Oopsed</strong>
+				in the US in 2020 too
+			</p>
+		
+			<div class="input">
+				<img class="input__flag" src="images/flag_us.png" />
+				<input id="whitelist-phone" class="input__field" type="tel" value="+1" />
+				<button id="whitelist-submit" class="input__button">Join the waitlist</button>
+			</div>
 		</div>
 
 		<div class="footer">
-			<p class="emoji">🤭</p>
-			<p class="date">Coming soon</p>
-			<p class="company">Oops Finance, Inc.</p>
+			<p class="footer__date">Coming soon</p>
+			<p class="footer__company">Oops Finance, Inc.</p>
 		</div>
 
 	</div>
-	<script src = js/script.js></script>
-	
+	<script src="https://unpkg.com/imask"></script>
+	<script src=js/script.js></script>
 </body>
 </html>
