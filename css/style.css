@@ -1,20 +1,28 @@
-@import url(reset.css);
-
 * {
-    font-family: ui-rounded, 'Varela Round', sans-serif !important;
+  font-family: ui-rounded, "Varela Round", sans-serif !important;
 }
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 .page {
   margin: 0;
   overflow: hidden;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  height: 100vh;
 }
 
 .header {
@@ -22,14 +30,14 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 84px 72px 0;
+  padding: 52px 100px 0;
   box-sizing: border-box;
 }
 
 .header__label {
   font-style: normal;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 54px;
   line-height: 111.34%;
   display: flex;
   align-items: center;
@@ -41,26 +49,26 @@ body {
 }
 
 .header__icon {
-  width: 70px;
-  height: 70px;
-  margin-left: 32px;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
 }
 
 .header__join {
-  height: 56px;
+  height: 40px;
   text-decoration: none;
-  background: rgba(132, 56, 255, 0.31);
-  border-radius: 36px;
+  background: #8438ff4f;
+  border-radius: 25px;
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 22px;
   line-height: 111.34%;
   display: flex;
   align-items: center;
   text-align: center;
   text-transform: capitalize;
   color: #7a28ff;
-  padding: 0 32px;
+  padding: 0 24px;
 }
 
 .main {
@@ -68,7 +76,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 56px 24px 120px;
+  padding: 48px 24px;
 }
 
 .main__total {
@@ -122,7 +130,7 @@ body {
 
 .whitelist__success p {
   margin: 0;
-  margin-right: 18px;
+  margin-right: 26px;
 }
 
 .whitelist__success p::after {
@@ -139,12 +147,17 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.393025px;
-  color: #8438ff;
+  color: #ffffff;
+  background: #8438ff;
+  border-radius: 34px;
+  padding: 0 24px;
+  height: 62px;
 
-  background: rgba(132, 56, 255, 0.31);
-  border-radius: 18px;
-  padding: 12px 24px;
-  width: 184px;
+  transition: 0.2s background;
+}
+
+.whitelist__success a:hover {
+  background: #8438ffe6;
 }
 
 .input {
@@ -155,6 +168,10 @@ body {
   align-items: center;
   height: 62px;
   width: 430px;
+}
+
+.input:focus-within {
+  background: rgba(226, 226, 226, 0.25);
 }
 
 .input__flag {
@@ -185,24 +202,25 @@ body {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  flex-shrink: 0;
+  font-weight: bold;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
 
-  background: #c3ffad;
+  transition: 0.5s all;
+  background: #6ce246;
   border-radius: 0px 20px 20px 0px;
-  font-style: normal;
-  font-weight: normal;
   font-size: 17.7012px;
   line-height: 21px;
   letter-spacing: 0.389425px;
-  color: #6ce246;
+  color: #fff;
   padding: 0 22px;
   height: 100%;
 }
 
 .input__button:disabled {
   background: #defad4;
+  color: #6ce246;
   cursor: default;
 }
 
@@ -214,7 +232,7 @@ body {
 
   font-style: normal;
   font-weight: bold;
-  font-size: 29.1667px;
+  font-size: 30px;
   line-height: 35px;
   display: flex;
   align-items: center;
@@ -237,13 +255,26 @@ body {
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 
+.mobile {
+  display: none !important;
+}
+
 @media screen and (max-width: 812px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: initial !important;
+  }
+
   .header {
-    padding: 32px 42px 0;
+    padding: 20px 24px 0;
+    height: 72px;
   }
 
   .header__label {
-    font-size: 40px;
+    font-size: 34px;
     line-height: 111.34%;
   }
 
@@ -252,17 +283,14 @@ body {
   }
 
   .header__icon {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
   }
 
   .footer {
-    font-size: 25px;
-    line-height: 30px;
-  }
-
-  .main {
-    padding-bottom: 48px;
+    font-size: 19.3287px;
+    line-height: 23px;
+    margin-bottom: 40px;
   }
 
   .main__total {
@@ -280,6 +308,7 @@ body {
     font-size: 20px;
     line-height: 154.34%;
     flex-direction: column;
+    margin-top: 24px;
   }
 
   .whitelist__success p {
@@ -292,10 +321,15 @@ body {
   }
 
   .whitelist__success a {
-    margin-top: 18px;
+    font-size: 19px;
+    line-height: 23px;
+    border-radius: 15px;
+    height: 46px;
+    padding: 0 16px;
   }
 
   .input {
+    position: relative;
     height: 48px;
     margin-top: 24px;
     width: 100%;
@@ -313,8 +347,14 @@ body {
   }
 
   .input__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 96px;
     font-size: 13px;
     line-height: 16px;
     min-width: 100px;
+    flex-shrink: 1;
   }
 }

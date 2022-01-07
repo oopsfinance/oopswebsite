@@ -37,7 +37,7 @@ window.addEventListener("load", function () {
   var phoneInput = document.querySelector("#whitelist-input input");
   var phoneButton = document.querySelector("#whitelist-input button");
   var phoneMask = IMask(phoneInput, {
-    mask: "+{1} (000) 000-000",
+    mask: "+{1} (000) 000-0000",
   });
 
   phoneButton.disabled = !phoneMask.masked.isComplete;
@@ -50,7 +50,8 @@ window.addEventListener("load", function () {
     fetch(preloadUrl, {
       method: "POST",
       body: JSON.stringify({ phone: phoneMask.unmaskedValue }),
-    }).then((res) => {
+    })
+	.then((res) => {
       phoneButton.disabled = false;
       if (res.ok == false) {
         alert("Error!");
