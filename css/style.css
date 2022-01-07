@@ -1,20 +1,12 @@
 @import url(reset.css);
 
-/* ------------------------------  fonts ------------------------------ */
-@font-face {
-  src: url(../fonts/SF-Pro-Rounded-Medium.ttf);
-  font-family: "SFProRounded";
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  src: url(../fonts/SF-Pro-Rounded-Semibold.otf);
-  font-family: "SFProRounded";
-  font-weight: bold;
-  font-style: normal;
+* {
+    font-family: ui-rounded, 'Varela Round', sans-serif;
 }
 
-/* ------------------------------ default properties ------------------------------ */
+body {
+    overflow-x: hidden;
+}
 
 .page {
   margin: 0;
@@ -23,7 +15,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: "SFProRounded";
 }
 
 .header {
@@ -172,7 +163,6 @@
 }
 
 .input__field {
-  font-family: SFProRounded;
   font-style: normal;
   font-weight: bold;
   font-size: 17.7012px;
