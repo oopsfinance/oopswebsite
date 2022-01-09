@@ -19,9 +19,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
   height: 100vh;
 }
 
@@ -266,6 +263,14 @@ html {
 @media screen and (max-width: 812px) {
   .desktop {
     display: none !important;
+  }
+
+  .page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 
   .mobile {
