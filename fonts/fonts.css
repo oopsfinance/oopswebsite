@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'SFRounded';
+    src: url('SFRounded-Medium.woff2') format('woff2'),
+        url('SFRounded-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'SFRounded';
+    src: url('SFRounded-Semibold.woff2') format('woff2'),
+        url('SFRounded-Semibold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: block;
+}
+

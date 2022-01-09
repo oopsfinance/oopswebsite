@@ -1,78 +1,69 @@
-window.addEventListener("load", function () {
-  function parseData(url) {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", url, false);
-    xhr.send();
-    if (xhr.status == 200) {
-      var totalSpendings = Math.floor(
-        JSON.parse(xhr.responseText)["oops_total"]
-      );
-      return totalSpendings;
-    } else console.log(xhr.status + " " + xhr.satusText);
-  }
-
-  function increaseValue(increase, currentValue) {
-    let needTime = increase / 10;
-    increasedValue = currentValue + increase;
-    const countDown = setInterval(() => {
-      currentValue++;
-      money.innerHTML = currentValue.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        maximumFractionDigits: 0,
-      });
-      if (increasedValue - currentValue == 0) clearInterval(countDown);
-    }, (1000 * needTime) / increase);
-    return increasedValue;
-  }
-
-  function checkNew(url, currentValue) {
-    let newValue = parseData(url) + 100;
-    if (newValue != currentValue) increaseValue(newValue - currentValue);
-  }
-
-  let preloadUrl = "https://api.oops.finance/api/v1/public/preload";
-  var whitelistSuccess = document.querySelector(".whitelist__success");
-  var whitelistInput = document.querySelector("#whitelist-input");
-  var phoneInput = document.querySelector("#whitelist-input input");
-  var phoneButton = document.querySelector("#whitelist-input button");
-  var phoneMask = IMask(phoneInput, {
-    mask: "+{1} (000) 000-0000",
-  });
+const makeWhitelistInput = () => {
+  const preloadUrl = "https://api.oops.finance/api/v1/public/preload";
+  const whitelistSuccess = document.querySelector(".whitelist__success");
+  const whitelistInput = document.querySelector("#whitelist-input");
+  const phoneInput = document.querySelector("#whitelist-input input");
+  const phoneButton = document.querySelector("#whitelist-input button");
+  const phoneMask = IMask(phoneInput, { mask: "+{1} (000) 000-0000" });
 
   phoneButton.disabled = !phoneMask.masked.isComplete;
-  phoneMask.on("accept", function () {
+  phoneMask.on("accept", () => {
     phoneButton.disabled = !phoneMask.masked.isComplete;
   });
 
-  phoneButton.onclick = function () {
+  phoneButton.onclick = async () => {
     phoneButton.disabled = true;
-    fetch(preloadUrl, {
-      method: "POST",
-      body: JSON.stringify({ phone: phoneMask.unmaskedValue }),
-    })
-	.then((res) => {
-      phoneButton.disabled = false;
-      if (res.ok == false) {
-        alert("Error!");
-        return;
-      }
+    const body = JSON.stringify({ phone: phoneMask.unmaskedValue });
+    const res = await fetch(preloadUrl, { body, method: "POST" });
 
-      whitelistInput.style.display = "none";
-      whitelistSuccess.style.display = "";
+    phoneButton.disabled = false;
+    if (res.ok == false) return alert("Error!");
+
+    whitelistInput.style.display = "none";
+    whitelistSuccess.style.display = "";
+  };
+};
+
+const makeOopsTotal = () => {
+  let actualTotal = 0;
+  let currentTotal = 0;
+
+  const loadOopsedTotal = async () => {
+    const url = "https://api.oops.finance/api/v1/public/oops_total";
+    const res = await fetch(url);
+    const { oops_total } = await res.json();
+    return Math.round(oops_total);
+  };
+
+  const renderTotal = (total) => {
+    const money = document.querySelector(".main__total");
+    money.innerHTML = total.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
     });
   };
 
-  const money = document.querySelector(".main__total");
-  let url = "https://api.oops.finance/api/v1/public/oops_total";
-  let value = parseInt(parseData(url)); //parse initial value
-  money.innerHTML = value.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  });
-  let difference = 100; // initial difference in money to make nice animation
+  // Animation increment
+  setInterval(() => {
+    if (actualTotal == currentTotal) return;
+    currentTotal += 1;
+    renderTotal(currentTotal);
+  }, 100);
 
-  value = increaseValue(difference, value);
-  setInterval(checkNew, 60000, url, value); // change the time when it parses new data
+  // Fetch first oopsed total
+  loadOopsedTotal().then((total) => {
+    currentTotal = Math.max(0, total - 100);
+    actualTotal = total;
+  });
+
+  // Update actual oopsed total
+  setInterval(() => {
+    loadOopsedTotal().then((total) => (actualTotal = total));
+  }, 60000);
+};
+
+window.addEventListener("load", () => {
+  makeOopsTotal();
+  makeWhitelistInput();
 });
