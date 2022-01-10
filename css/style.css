@@ -19,7 +19,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header {
@@ -113,25 +113,28 @@ html {
 
 .whitelist__success {
   margin-top: 60px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 31.2633px;
-  line-height: 53px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
-  letter-spacing: 0.393025px;
-  color: #4a4a4a;
 }
 
 .whitelist__success p {
-  margin: 0;
-  margin-right: 26px;
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 115%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.393025px;
+  color: #111111;
+  width: 164px;
 }
 
-.whitelist__success p::after {
-  content: "👉";
+.whitelist__success img {
+  width: 175px;
+  height: 156px;
 }
 
 .whitelist__success a {
@@ -140,7 +143,6 @@ html {
   font-weight: bold;
   font-size: 17.8648px;
   line-height: 21px;
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.393025px;
@@ -151,6 +153,7 @@ html {
   height: 62px;
 
   transition: 0.2s background;
+  display: none;
 }
 
 .whitelist__success a:hover {
@@ -267,7 +270,7 @@ html {
 
   .page {
     position: fixed;
-    height: initial;
+    min-height: initial;
     top: 0;
     left: 0;
     bottom: 0;
@@ -336,6 +339,7 @@ html {
     border-radius: 15px;
     height: 46px;
     padding: 0 12px 0 16px;
+    display: flex;
   }
 
   .input {
