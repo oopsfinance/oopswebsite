@@ -1,27 +1,26 @@
-
-
-/* ------------------------------  fonts ------------------------------ */
-@font-face{
-    src: url(../../fonts/SF-Pro-Rounded-Light.otf);
-    font-family: "SFProRounded";
-    font-weight: lighter;
-    font-style: normal;
-}
-@font-face{
-    src: url(../../fonts/SF-Pro-Rounded-Semibold.otf);
-    font-family: "SFProRounded";
-    font-weight: bold;
-    font-style: normal;
+* {
+  font-family: ui-rounded, "SFRounded", sans-serif !important;
 }
 
-/* ------------------------------ default properties ------------------------------ */
-
-.title{
+.title {
     font-size: 45px;
+    display: flex;
+    align-items: center;
 }
-.stackedit__right{
+
+.title p {
+    font-weight: bold;
+}
+
+.title img {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.stackedit__right {
     margin: 5% 15%;
-    font-family: "SFProRounded";
     font-size: 25px;
     font-weight: lighter;
     line-height: 1.6;
