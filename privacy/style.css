@@ -12,16 +12,22 @@
     font-weight: bold;
 }
 
-.title img {
-    width: 64px;
-    height: 64px;
-    flex-shrink: 0;
-    margin-right: 16px;
-}
-
 .stackedit__right {
     margin: 5% 15%;
     font-size: 25px;
-    font-weight: lighter;
+    font-weight: 400;
     line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+    .stackedit__right {
+        margin: 24px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    .title {
+        font-size: 32px;
+    }
 }

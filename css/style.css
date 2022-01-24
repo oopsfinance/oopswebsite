@@ -280,7 +280,7 @@ html {
   }
 
   .mobile {
-    display: initial !important;
+    display: flex !important;
   }
 
   .header {
