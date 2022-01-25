@@ -1,73 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-	<title>Oops</title>
-	<meta charset="utf-8">
-	<meta description="oops finance ios application landing whitelist testflight">
-	<meta keywords="finance, oops, ios, whitelist, testflight">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/site.webmanifest">
-	<link rel="stylesheet" href="css/style.css?new">
-	<link rel="stylesheet" href="fonts/fonts.css">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDJ7LMV65V"></script>
-	<script>
+	<head>
+		<title>Oops</title>
+		<meta charset="utf-8">
+		<meta description="oops finance ios application landing whitelist testflight">
+		<meta keywords="finance, oops, ios, whitelist, testflight">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/site.webmanifest">
+		<link rel="stylesheet" href="css/style.css?new">
+		<link rel="stylesheet" href="fonts/fonts.css">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDJ7LMV65V"></script>
+		<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 		gtag('config', 'G-EDJ7LMV65V');
 	</script>
-</head>
+	</head>
 
-<body>
-	<div class="page">
-		<div class="header">
-			<p class="header__label">Oops</p>
-			<a class="header__join" href="https://apps.apple.com/us/app/oops/id1593466495">Join</a>
-			<img class="header__icon" src="images/icon.png" />
-		</div>
-
-		<div class="main">
-			<p class="main__total">$0</p>
-			<p class="main__description desktop">
-				Total
-				<span>$</span>
-				<strong>Oopsed</strong>
-				<nobr>in the US in 2022</nobr>
-				</p>
-				
-				<p class="main__description mobile">
-					Total
-					<span>$</span>
-					<strong>Oopsed</strong>
-					<nobr>in the US</nobr>
-				</p>
-
-			<div class="input mobile" id="whitelist-input">
-				<img class="input__flag" src="images/flag_us.png" />
-				<input class="input__field" type="tel" value="+1" />
-				<button disabled class="input__button">Join the waitlist</button>
+	<body>
+		<div class="page">
+			<div class="oops-logo">
+				<a href="https://apps.apple.com/us/app/oops/id1593466495">
+					<img src="images/icon.png" />
+				</a>
+				<a href="https://apps.apple.com/us/app/oops/id1593466495">
+					<p>Oops</p>
+				</a>
+			</div>
+			<div class="appstore-qr">
+				<img src="images/qr.png" />
+				<span>👆</span>
+				<p>Scan to download on iOS</p>
 			</div>
 
-			<div class="whitelist__success desktop">
-				<p class="desktop">You are invited to join<br />Oops Beta 🎉</p>
-				<img class="desktop" src="images/qr.png" alt="testglight qr code" />
-				<a href="https://apps.apple.com/us/app/oops/id1593466495">Predownload 📲</a>
+			<div class="main">
+				<div class="total">
+					<p class="main__total">$76,680</p>
+					<p class="main__description desktop">Total 💸 <b>Oopsed</b> in the US in 2022</p>
+					<p class="main__description mobile">Total 💸 <b>Oopsed</b> in the US</p>
+				</div>
+				<a class="appstore__button mobile" href="https://apps.apple.com/us/app/oops/id1593466495">
+					<img src="images/appstore.png" />
+				</a>
+				<img class="main__screen" src="images/screen.png" />
+
+				<div class="footer">
+					<a class="footer__link" href="/tos">🤝 terms of service</a>
+					<a class="footer__link" href="/privacy">🔒 privacy</a>
+					<p class="footer__company">© Oops Finance, Inc.</p>
+					</div>
 			</div>
-		</div>
-
-		<div class="footer">
-			<p class="footer__date">Coming soon</p>
-			<p class="footer__company">Oops Finance, Inc.</p>
-		</div>
-
-	</div>
-	<script src="https://unpkg.com/imask"></script>
-	<script src=js/main.js></script>
-</body>
-
+			</div>
+			<script src="https://unpkg.com/imask"></script>
+			<script src=js/main.js></script>
+			</body>
 </html>

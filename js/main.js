@@ -1,29 +1,3 @@
-const makeWhitelistInput = () => {
-  const preloadUrl = "https://api.oops.finance/api/v1/public/preload";
-  const whitelistSuccess = document.querySelector(".whitelist__success");
-  const whitelistInput = document.querySelector("#whitelist-input");
-  const phoneInput = document.querySelector("#whitelist-input input");
-  const phoneButton = document.querySelector("#whitelist-input button");
-  const phoneMask = IMask(phoneInput, { mask: "+{1} (000) 000-0000" });
-
-  phoneButton.disabled = !phoneMask.masked.isComplete;
-  phoneMask.on("accept", () => {
-    phoneButton.disabled = !phoneMask.masked.isComplete;
-  });
-
-  phoneButton.onclick = async () => {
-    phoneButton.disabled = true;
-    const body = JSON.stringify({ phone: phoneMask.unmaskedValue });
-    const res = await fetch(preloadUrl, { body, method: "POST" });
-
-    phoneButton.disabled = false;
-    if (res.ok == false) return alert("Error!");
-
-    whitelistInput.style.display = "none";
-    whitelistSuccess.style.display = "";
-  };
-};
-
 const makeOopsTotal = () => {
   let actualTotal = 0;
   let currentTotal = 0;
@@ -37,6 +11,10 @@ const makeOopsTotal = () => {
 
   const renderTotal = (total) => {
     const money = document.querySelector(".main__total");
+    const totalContainter = document.querySelector(".total");
+    totalContainter.style.transform = 'translateY(0px)'
+    totalContainter.style.opacity = 1
+
     money.innerHTML = total.toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
@@ -66,5 +44,4 @@ const makeOopsTotal = () => {
 
 window.addEventListener("load", () => {
   makeOopsTotal();
-  makeWhitelistInput();
 });
