@@ -78,18 +78,16 @@ html, body, .page {
 }
 
 .appstore-qr img {
-  padding: 8px;
-  border-radius: 18px;
-  background: #FFFFFF;
-  box-shadow: 0px 24.1394px 31.2392px rgba(0, 0, 0, 0.03);  
-  width: 107px;
-  height: 107px;
+  width: 230px;
+  margin-bottom: -72px;
+  margin-top: -40px;
 }
 
 .appstore-qr span {
   font-size: 48px;
   margin-top: 34px;
   margin-bottom: 8px;
+  margin-left: 4px;
 }
 
 .appstore-qr p {
@@ -103,6 +101,7 @@ html, body, .page {
   color: #000000;
   width: 112px;
   margin: 0;
+  margin-left: 2px;
 }
 
 @media (max-width: 1200px) {
