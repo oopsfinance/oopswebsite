@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script src="https://cdn.teller.io/connect/connect.js"></script>
+    <script>
+        var search = new URLSearchParams(window.location.search)
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var tellerConnect = TellerConnect.setup({
+                environment: search.get("environment"),
+                applicationId: search.get("applicationId"),
+
+                onSuccess: function (data) {
+                    webkit.messageHandlers.tellerSuccess.postMessage({
+                        accessToken: data.accessToken,
+                        bankName: data.enrollment.institution.name,
+                        enrollment: data.enrollment.id
+                    })
+                },
+
+                onFailure: function (data) {
+                    webkit.messageHandlers.tellerFailure.postMessage({
+                        type: data.type,
+                        code: data.code,
+                        message: data.message
+                    })
+                },
+
+                onExit: function () {
+                    webkit.messageHandlers.tellerExit.postMessage({})
+                }
+            });
+
+            tellerConnect.open();
+        });
+    </script>
+</body>
+
+</html>
