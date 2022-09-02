@@ -2,7 +2,9 @@
   font-family: ui-rounded, "SFRounded", sans-serif !important;
 }
 
-html, body, .page {
+html,
+body,
+.page {
   padding: 0;
   margin: 0;
 }
@@ -276,9 +278,9 @@ html, body, .page {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 460px) {
   .main__total {
-    font-size: 64px;
+    font-size: 15vw;
   }
 
   .main__description {
