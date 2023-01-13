@@ -192,6 +192,17 @@ body,
   margin: 124px auto 32px;
 }
 
+.hiring {
+  background-color: #8740f9;
+  color: aliceblue;
+  padding: 12px 24px;
+  border-radius: 999;
+}
+
+.hiring:hover {
+  background-color: #8541F2;
+}
+
 .footer__link {
   font-weight: bold;
   font-size: 20px;
