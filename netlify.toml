@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/jobs"
+  to = "https://jobs.polymer.co/oops"
+  status = 301
+  force = false
