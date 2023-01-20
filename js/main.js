@@ -3,7 +3,7 @@ const makeOopsTotal = () => {
   let currentTotal = 0;
 
   const loadOopsedTotal = async () => {
-    const url = "https://api.oops.finance/api/v1/public/oops_total";
+    const url = "https://api.oops.finance/api/v3/public/oops_total";
     const res = await fetch(url);
     const { oops_total } = await res.json();
     return Math.round(oops_total);
