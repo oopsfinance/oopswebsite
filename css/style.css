@@ -194,8 +194,9 @@ body,
 
 .hiring {
   position: fixed;
-  bottom: 64px;
-  right: 64px;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hiring a {
