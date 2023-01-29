@@ -193,6 +193,9 @@ body,
 }
 
 .hiring {
+  position: fixed;
+  bottom: 32px;;
+  right: 32px;
   background-color: #8740f9;
   color: aliceblue;
   padding: 12px 24px;
