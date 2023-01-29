@@ -196,20 +196,6 @@ body,
   position: fixed;
   bottom: 32px;
   right: 32px;
-  background-color: #8740f9;
-  color: aliceblue;
-  padding: 12px 24px;
-  border-radius: 999px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.44px;
-  text-decoration: none;
-  transition: 0.2s color;
-  margin-bottom: 16px;
 }
 
 .hiring a {
@@ -226,7 +212,6 @@ body,
   letter-spacing: 0.44px;
   text-decoration: none;
   transition: 0.2s color;
-  margin-bottom: 16px;
 }
 
 .hiring a:hover {
