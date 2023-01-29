@@ -193,10 +193,9 @@ body,
 }
 
 .hiring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
 }
 
 .hiring a {
@@ -302,6 +301,11 @@ body,
 
   .footer__company {
     font-size: 20px;
+  }
+
+  .hiring {
+    bottom: 32px;
+    right: 32px;
   }
 }
 
