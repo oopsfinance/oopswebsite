@@ -1,9 +1,11 @@
+# redirect to jobs site
 [[redirects]]
   from = "/jobs"
   to = "https://jobs.polymer.co/oops"
   status = 301
   force = false
-  
+
+# redirect user api to track link click. API then redirects to appstore (supports refer friends flow)
 [[redirects]]
   from = "/invite"
   to = "https://google.com"
