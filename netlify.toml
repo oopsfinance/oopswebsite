@@ -3,3 +3,11 @@
   to = "https://jobs.polymer.co/oops"
   status = 301
   force = false
+  
+[[redirects]]
+  from = "/invite"
+  to = "google.com/?ref_code=:ref_code"
+  status = 301
+  force = false
+  query = {ref_code = ":ref_code"}
+
