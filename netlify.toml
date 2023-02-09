@@ -8,6 +8,6 @@
 # redirect user api to track link click. API then redirects to appstore (supports refer friends flow)
 [[redirects]]
   from = "/invite"
-  to = "https://google.com"
+  to = "https://api.oops.finance/refer"
   status = 301
   force = false
