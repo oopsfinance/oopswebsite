@@ -6,8 +6,6 @@
   
 [[redirects]]
   from = "/invite"
-  to = "google.com/?ref_code=:ref_code"
+  to = "https://google.com"
   status = 301
   force = false
-  query = {ref_code = ":ref_code"}
-
