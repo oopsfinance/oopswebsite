@@ -5,9 +5,8 @@
   status = 301
   force = false
 
-# redirect user api to track link click. API then redirects to appstore (supports refer friends flow)
 [[redirects]]
   from = "/invite"
-  to = "https://api.oops.finance/refer"
-  status = 301
-  force = false
+  to = "invite.html"
+  status = 200
+  force = true

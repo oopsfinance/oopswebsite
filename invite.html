@@ -1,0 +1,29 @@
+<html>   <body onload = "handle()" >
+</html>
+
+
+<script type="text/javascript">
+
+    function handle(){
+        console.log(window.location.href)
+        var url = new URL(window.location.href);
+        var c = url.searchParams.get("c");
+        console.log(c);
+
+        fetch('https://dev.oops.finance/refer', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ref_code: "abc"})
+        }).then(res => res.json())
+        .then(res => console.log(res));       
+        
+        
+
+    // window.location.replace("https://apps.apple.com/app/apple-store/id1593466495")
+
+}
+
+</script>
