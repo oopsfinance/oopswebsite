@@ -4,11 +4,11 @@
 
     function handle(){
         console.log(window.location.href)
-        var url = new URL(window.location.href);
-        var c = url.searchParams.get("c");
+        var url = new URL(document.location);
+        var c = url.searchParams.get("ref_code");
         console.log(c);
 
-        fetch('https://dev.oops.finance/refer?ref_code=' + c.ref_code, {
+        fetch('https://dev.oops.finance/refer?ref_code=' + c, {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
