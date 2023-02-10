@@ -10,7 +10,7 @@
         var c = url.searchParams.get("c");
         console.log(c);
 
-        fetch('https://dev.oops.finance/refer', {
+        fetch('https://dev.oops.finance/refer?ref_code=' += c.ref_code, {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
