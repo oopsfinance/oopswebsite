@@ -10,9 +10,3 @@
   to = "invite.html"
   status = 200
   force = true
-
-[[redirects]]
-  from = "/add/*"
-  to = "invite.html"
-  status = 200
-  force = true
