@@ -6,9 +6,16 @@
         console.log(window.location.href)
         var url = new URL(document.location);
         var c = url.searchParams.get("ref_code");
-        console.log(c);
+        var d = url.searchParams.get("r");
+        code = ""
 
-        fetch('https://api.oops.finance/refer?ref_code=' + c, {
+        if (d != null){
+            code = d
+        }else{
+            code = c
+        }
+
+        fetch('https://api.oops.finance/refer?ref_code=' + code, {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -19,7 +26,7 @@
         
         
 
-    window.location.replace("https://apps.apple.com/app/apple-store/id1593466495")
+    // window.location.replace("https://apps.apple.com/app/apple-store/id1593466495")
 
 }
 
