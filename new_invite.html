@@ -1,0 +1,31 @@
+
+
+<script type="text/javascript">
+
+    function handle(){
+        console.log(window.location.href)
+        var url = new URL(document.location);
+
+        console.log(location.pathname.split("/")[1])
+
+        fetch('https://api.oops.finance/refer?ref_code=' + location.pathname.split("/")[1], {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        }).then(res => res.json())
+        .then(res => console.log(res));       
+        
+        
+
+    // window.location.replace("https://apps.apple.com/app/apple-store/id1593466495")
+
+}
+
+</script>
+
+
+<html>   <body onload = "handle()" >
+    </html>
+    
