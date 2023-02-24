@@ -1,14 +1,18 @@
 
+<!-- new link scheme with /add -->
 
 <script type="text/javascript">
 
+
     function handle(){
         console.log(window.location.href)
+        console.log("new")
+
         var url = new URL(document.location);
 
-        console.log(location.pathname.split("/")[1])
+        console.log(location.pathname.split("/")[2])
 
-        fetch('https://api.oops.finance/refer?ref_code=' + location.pathname.split("/")[1], {
+        fetch('https://api.oops.finance/refer?ref_code=' + location.pathname.split("/")[2], {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
