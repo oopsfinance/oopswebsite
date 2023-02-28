@@ -11,8 +11,14 @@
   status = 200
   force = true
 
-  [[redirects]]
+[[redirects]]
   from = "/add/*"
+  to = "new_invite.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/appstore/*"
   to = "new_invite.html"
   status = 200
   force = true
