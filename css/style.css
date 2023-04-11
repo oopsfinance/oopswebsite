@@ -192,6 +192,7 @@ body,
   margin: 124px auto 32px;
 }
 
+/* hide hiring for now */
 .hiring {
   display: none;
   position: fixed;
