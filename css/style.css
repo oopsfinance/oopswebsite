@@ -262,6 +262,10 @@ body,
   height: 32px;
 }
 
+.icon svg :hover {
+  fill: #8740f9;
+} 
+
 .icon {
   height: 100%;
 }
