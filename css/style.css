@@ -255,6 +255,10 @@ body,
   height: 64px;
 }
 
+.icon {
+  width: 100%;
+}
+
 @media (max-width: 1000px) {
   .main__total {
     font-size: 90px;
