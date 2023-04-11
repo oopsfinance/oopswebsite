@@ -250,6 +250,11 @@ body,
   margin-top: 24px;
 }
 
+.footer__icon {
+  width: 64px;
+  height: 64px;
+}
+
 @media (max-width: 1000px) {
   .main__total {
     font-size: 90px;
