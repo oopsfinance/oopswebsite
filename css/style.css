@@ -250,6 +250,12 @@ body,
   margin-top: 24px;
 }
 
+.icon__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .footer__icon {
   width: 32px;
   height: 32px;
