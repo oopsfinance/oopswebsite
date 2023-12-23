@@ -1,5 +1,6 @@
 * {
   font-family: ui-rounded, "SFRounded", sans-serif !important;
+  font-variant-numeric: tabular-nums;
 }
 
 html,
