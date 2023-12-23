@@ -149,6 +149,7 @@ body,
   color: #000000;
   font-weight: bold;
   margin: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 .main__description {
