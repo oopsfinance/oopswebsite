@@ -32,7 +32,7 @@ const makeOopsTotal = () => {
 
   // Fetch first oopsed total
   loadOopsedTotal().then((total) => {
-    currentTotal = Math.max(0, total - 100);
+    currentTotal = Math.max(0, total - 100000);
     actualTotal = total;
   });
 
